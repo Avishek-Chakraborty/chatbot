@@ -24,7 +24,7 @@ export default function useGemini() {
 		]);
 		setLoading(true);
 		try {
-			console.log("message", payload);
+			console.log("Here is the final storage :: ", payload);
 			const stream = await GeminiService.sendMessages(
 				payload.message,
 				payload.history
@@ -57,5 +57,17 @@ export default function useGemini() {
 		}
 	};
 
-	return { messages, loading, sendMessages, updateMessage };
+	
+	const downloadMessagesAsJSON = async (payload) => {
+		const csvString = payload.join("\n");
+		const blob = new Blob([csvString], { type: "text/csv" });
+		const url = URL.createObjectURL(blob);
+		const link = document.createElement("a");
+		link.href = url;
+		link.download = "depressionDataNew.csv";
+		link.click();
+		URL.revokeObjectURL(url);
+	}
+
+	return { messages, loading, sendMessages, updateMessage, downloadMessagesAsJSON };
 }

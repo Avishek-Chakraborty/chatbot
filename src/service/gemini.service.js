@@ -7,32 +7,32 @@ const GeminiService = (function () {
 	const service = {};
 
 	service.sendMessages = async function (message, prevChat) {
-		const model = genAI.getGenerativeModel({ 
-            model: MODEL_NAME,
-            generation_config: {
-                max_output_tokens: 2048,
-                temperature: 0.9,
-                top_p: 1,
-            },
-            safety_settings: [
-                {
-                    category: "HARM_CATEGORY_HATE_SPEECH",
-                    threshold: "BLOCK_ONLY_HIGH",
-                },
-                {
-                    category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                    threshold: "BLOCK_ONLY_HIGH",
-                },
-                {
-                    category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                    threshold: "BLOCK_ONLY_HIGH",
-                },
-                {
-                    category: "HARM_CATEGORY_HARASSMENT",
-                    threshold: "BLOCK_ONLY_HIGH",
-                },
-            ],
-        });
+		const model = genAI.getGenerativeModel({
+			model: MODEL_NAME,
+			generation_config: {
+				max_output_tokens: 2048,
+				temperature: 0.7,
+				top_p: 1,
+			},
+			safety_settings: [
+				{
+					category: "HARM_CATEGORY_HATE_SPEECH",
+					threshold: "BLOCK_ONLY_HIGH",
+				},
+				{
+					category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+					threshold: "BLOCK_ONLY_HIGH",
+				},
+				{
+					category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+					threshold: "BLOCK_ONLY_HIGH",
+				},
+				{
+					category: "HARM_CATEGORY_HARASSMENT",
+					threshold: "BLOCK_ONLY_HIGH",
+				},
+			],
+		});
 
 		const chat = model.startChat({
 			history: [
@@ -58,7 +58,6 @@ const GeminiService = (function () {
 })();
 
 export default GeminiService;
-
 
 /*
 

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Input } from "@chakra-ui/react";
 import { InputGroup, Box, InputRightElement, Button } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Text } from "@chakra-ui/react";
@@ -10,8 +9,16 @@ import ReactMarkdown from "react-markdown";
 import useGemini from "../hooks/GeminiProps";
 
 const Gemini = () => {
-	const { messages, loading, sendMessages, updateMessage } = useGemini();
+	const {
+		messages,
+		loading,
+		sendMessages,
+		updateMessage,
+		downloadMessagesAsJSON,
+	} = useGemini();
+
 	const [input, setInput] = useState("");
+	const [data, setData] = useState([]);
 
 	const AlwaysScrollToBottom = () => {
 		const elementRef = useRef();
@@ -27,6 +34,8 @@ const Gemini = () => {
 
 	const handleSend = async () => {
 		if (!input) return;
+		data.push(String(input));
+		setData([...data]);
 		setInput("");
 		updateMessage([
 			...messages,
@@ -93,10 +102,13 @@ const Gemini = () => {
 							variant={"outline"}
 							h="1.75rem"
 							size="sm"
-							onClick={() => updateMessage([])}
+							onClick={() => {
+								downloadMessagesAsJSON(data);
+								updateMessage([]);
+							}}
 							rightIcon={<DeleteIcon />}
 						>
-							Clear
+							Submit & Clear
 						</Button>
 					</Box>
 				</Box>
