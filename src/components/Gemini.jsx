@@ -136,14 +136,14 @@ const Introduction = () => {
 	return (
 		<Box className="flex flex-col items-center justify-center">
 			<Box className="flex flex-col items-center justify-center">
-				<TextRenderer value="This is HAL9000" size="xxx-large" />
+				<TextRenderer value="This is Mr.Comrade" size="xxx-large" />
 				<TextRenderer
-					value="I'm created by Avishek Chakraborty, designed to chat"
+					value="I'm designed by Avishek and his team, to chat and analyze your mental health"
 					direction={"l"}
 				/>
 			</Box>
 			<Box className="flex flex-col items-center justify-center">
-				<TextRenderer value="Type a message to get started" />
+				<TextRenderer value="Type a message like 'Hi' to get started" />
 			</Box>
 			<div className="justify-center bg-black rounded-lg">
 			<img src="https://scontent.fccu11-1.fna.fbcdn.net/v/t39.30808-6/277772526_383632167103118_6230432605401882611_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=-t9-TjrKOKwAX_nkIrJ&_nc_ht=scontent.fccu11-1.fna&oh=00_AfAMPz0kx0MzsYMq6FWUJ7Ehs9oYslXIY74hrrNVa1uuYA&oe=65DC4BEA" alt="MSIT Logo" width="400"/>
