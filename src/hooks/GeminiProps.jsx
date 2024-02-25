@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import GeminiService from "../service/gemini.service";
 
+import { useDispatch } from "react-redux";
+import { addData } from "../store/dataSlice";
+
 export default function useGemini() {
 	const [messages, updateMessage] = useState(checkForMessages());
 	const [loading, setLoading] = useState(false);
+	const dispatch = useDispatch();
 
 	function checkForMessages() {
 		const savedMessages = localStorage.getItem("messages");
@@ -57,17 +61,26 @@ export default function useGemini() {
 		}
 	};
 
-	
-	const downloadMessagesAsJSON = async (payload) => {
-		const csvString = payload.join("\n");
-		const blob = new Blob([csvString], { type: "text/csv" });
-		const url = URL.createObjectURL(blob);
-		const link = document.createElement("a");
-		link.href = url;
-		link.download = "depressionDataNew.csv";
-		link.click();
-		URL.revokeObjectURL(url);
-	}
+	const storeMessagesToStore = async (payload) => {
+		// const csvString = payload.join("\n");
+		// const blob = new Blob([csvString], { type: "text/csv" });
+		// const url = URL.createObjectURL(blob);
+		// const link = document.createElement("a");
+		// link.href = url;
+		// link.download = "depressionDataNew.csv";
+		// link.click();
+		// URL.revokeObjectURL(url);
 
-	return { messages, loading, sendMessages, updateMessage, downloadMessagesAsJSON };
+		const dataString = payload.join("\n");
+		// dispatch(addData({ arrayOfStrings: dataString }));
+		dispatch(addData(payload));
+	};
+
+	return {
+		messages,
+		loading,
+		sendMessages,
+		updateMessage,
+		storeMessagesToStore,
+	};
 }
