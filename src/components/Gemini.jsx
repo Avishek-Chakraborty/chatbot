@@ -14,7 +14,6 @@ const Gemini = () => {
 		loading,
 		sendMessages,
 		updateMessage,
-		downloadMessagesAsJSON,
 	} = useGemini();
 
 	const [input, setInput] = useState("");
@@ -103,7 +102,8 @@ const Gemini = () => {
 							h="1.75rem"
 							size="sm"
 							onClick={() => {
-								downloadMessagesAsJSON(data);
+								// downloadMessagesAsJSON(data);
+								setData([]);
 								updateMessage([]);
 							}}
 							rightIcon={<DeleteIcon />}

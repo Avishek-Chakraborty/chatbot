@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import config from "../utils/config";
+
 const genAI = new GoogleGenerativeAI(config.geminiUrl); // The API key
 
 const GeminiService = (function () {
