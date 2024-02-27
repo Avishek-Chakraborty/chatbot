@@ -12,15 +12,15 @@ const Emotion = () => {
 		(async () => {
 			const result = await EmotionService(dataString);
 			setData(result);
-			console.log("Result in component :: ", data);
+			console.log("Result in component :: ", result);
 		})();
 	}, [dataString, data]);
 
 	return (
-		<div>
-			{data ? JSON.stringify(data) : "Loading..."}
-			{dispatch.clearStoreData()}
-		</div>
+		<>
+			<div>{data ? JSON.stringify(data) : "Loading..."}</div>
+			<button onClick={() => dispatch(clearStoreData())}>Clear Data</button>
+		</>
 	);
 };
 

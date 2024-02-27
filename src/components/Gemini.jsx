@@ -147,7 +147,7 @@ const Introduction = () => {
 			</Box>
 			<div className="justify-center bg-black rounded-lg">
 				<img
-					src="https://scontent.fccu11-1.fna.fbcdn.net/v/t39.30808-6/277772526_383632167103118_6230432605401882611_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=-t9-TjrKOKwAX_nkIrJ&_nc_ht=scontent.fccu11-1.fna&oh=00_AfAMPz0kx0MzsYMq6FWUJ7Ehs9oYslXIY74hrrNVa1uuYA&oe=65DC4BEA"
+					src="https://images.shiksha.com/mediadata/images/1657022896php2uoO7i.jpeg"
 					alt="MSIT Logo"
 					width="400"
 				/>
