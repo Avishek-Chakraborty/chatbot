@@ -55,7 +55,7 @@ export default function useGemini() {
 					],
 				},
 			]);
-			console.error("An error occurred:", error);
+			console.error("Myyy!!! An error occurred in Gemini API fetch :: ", error);
 		} finally {
 			setLoading(false);
 		}
