@@ -146,7 +146,12 @@ const Introduction = () => {
 				<TextRenderer value="Type a message like 'Hi' to get started" />
 			</Box>
 			<div className="justify-center bg-black rounded-lg">
-			<img src="https://images.shiksha.com/mediadata/images/1657022896php2uoO7i.jpeg" alt="MSIT Logo" width="400"/>
+
+				<img
+					src="https://images.shiksha.com/mediadata/images/1657022896php2uoO7i.jpeg"
+					alt="MSIT Logo"
+					width="400"
+				/>
 			</div>
 		</Box>
 	);

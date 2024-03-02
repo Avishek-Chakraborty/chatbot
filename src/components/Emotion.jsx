@@ -15,18 +15,10 @@ const Emotion = () => {
 		})();
 	}, [dataString, data]);
 
-	useEffect(() => {
-		return () => {
-			dispatch(clearStoreData());
-		};
-	}, [dispatch]);
-
 	return (
 		<>
 			<div>{data ? JSON.stringify(data) : "Loading..."}</div>
-			<button onClick={() => dispatch(clearStoreData())}>
-				Clear Data
-			</button>
+			<button onClick={() => dispatch(clearStoreData())}>Clear Data</button>
 		</>
 	);
 };
