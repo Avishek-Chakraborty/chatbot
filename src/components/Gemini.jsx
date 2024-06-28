@@ -136,23 +136,15 @@ const Introduction = () => {
 	return (
 		<Box className="flex flex-col items-center justify-center">
 			<Box className="flex flex-col items-center justify-center">
-				<TextRenderer value="This is Mr.Comrade" size="xxx-large" />
+				<TextRenderer value="This is Thera" size="xxx-large" />
 				<TextRenderer
-					value="I'm designed by Avishek and his team, to chat and analyze your mental health"
+					value="I'm designed by Avishek, to chat about your mental health and wellbeing"
 					direction={"l"}
 				/>
 			</Box>
 			<Box className="flex flex-col items-center justify-center">
 				<TextRenderer value="Type a message like 'Hi' to get started" />
 			</Box>
-			<div className="justify-center bg-black rounded-lg">
-
-				<img
-					src="https://images.shiksha.com/mediadata/images/1657022896php2uoO7i.jpeg"
-					alt="MSIT Logo"
-					width="400"
-				/>
-			</div>
 		</Box>
 	);
 };
