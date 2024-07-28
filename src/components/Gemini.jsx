@@ -9,12 +9,7 @@ import ReactMarkdown from "react-markdown";
 import useGemini from "../hooks/GeminiProps";
 
 const Gemini = () => {
-	const {
-		messages,
-		loading,
-		sendMessages,
-		updateMessage,
-	} = useGemini();
+	const { messages, loading, sendMessages, updateMessage } = useGemini();
 
 	const [input, setInput] = useState("");
 	const [data, setData] = useState([]);
@@ -108,7 +103,7 @@ const Gemini = () => {
 							}}
 							rightIcon={<DeleteIcon />}
 						>
-							Submit & Clear
+							Clear
 						</Button>
 					</Box>
 				</Box>
